@@ -1,0 +1,67 @@
+{
+    "name": "taxionus/laravel-translatable",
+    "description": "A trait to make an Eloquent model hold translations",
+    "keywords": [
+        "taxionus",
+        "laravel-translatable",
+        "translate",
+        "eloquent",
+        "model",
+        "i8n",
+        "multilingual"
+    ],
+    "homepage": "https://github.com/taxionus/laravel-translatable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahamed Riham",
+            "email": "ahamedriham@gmail.com",
+            "homepage": "https://github.com/ahamedriham",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/database": "^9.0",
+        "illuminate/support": "^9.0",
+        "spatie/laravel-package-tools": "^1.11"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.4",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.20"
+    },
+    "autoload": {
+        "psr-4": {
+            "Taxionus\\Translatable\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Taxionus\\Translatable\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Taxionus\\Translatable\\TranslatableServiceProvider",
+                "Taxionus\\Translatable\\UniqueTranslationServiceProvider"
+            ]
+        },
+        "aliases": {
+            "Translatable": "Taxionus\\Translatable\\Facades\\Translatable"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
